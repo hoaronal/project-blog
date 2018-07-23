@@ -32,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
 							<li><a href="#"><i class="fa fa-rss"></i></a></li>
 						</ul>
-						<!-- <!-- <a href="#" class="login">Login/Sign Up</a> --> -->
+						<a href="#" class="login">Login/Sign Up</a>
 					</div>
 				</div>
 			</div>
