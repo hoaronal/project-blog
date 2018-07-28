@@ -30,7 +30,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div id="wrapper">
 	  <?php echo $header;?>
 	  <?php echo $slider;?>
-
+	  <main id="main">
+		  <section class="container container-block">
+	  		<?php echo $content;?>
+		  </section>
+	  </main>
 	  <?php echo $footer;?>
   </div>
 

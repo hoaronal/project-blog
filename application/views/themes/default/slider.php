@@ -12,7 +12,7 @@
 					</div>
 				</div>
 				<div class="bg-stretch">
-					<img src="images/slider/1.jpg" alt="image description">
+					<img src="<?php echo $base_assets_url_web;?>images/slider/1.jpg" alt="image description">
 				</div>
 			</div>
 			<div class="beans-slide  win-height">
@@ -26,7 +26,7 @@
 					</div>
 				</div>
 				<div class="bg-stretch">
-					<img src="images/slider/2.jpg" alt="image description">
+					<img src="<?php echo $base_assets_url_web;?>images/slider/2.jpg" alt="image description">
 				</div>
 			</div>
 
@@ -41,7 +41,7 @@
 					</div>
 				</div>
 				<div class="bg-stretch">
-					<img src="images/slider/s1.jpg" alt="image description">
+					<img src="<?php echo $base_assets_url_web;?>images/slider/s1.jpg" alt="image description">
 				</div>
 			</div>
 

@@ -16,7 +16,7 @@ class MY_Controller extends CI_Controller {
     protected $parent_menu = '';
     protected $page_title = '';
     protected $theme = '';
-
+	protected $currentUrl = '';
     function __construct() {
         parent::__construct();
 
@@ -54,8 +54,10 @@ class MY_Controller extends CI_Controller {
     protected function load_theme($content = null, $layout = true) {
         $this->load->model('Menu');
         $this->data['main_menus'] = '';
+		$this->data['end_path'] = '';
+
         if(count($this->Menu->findActive()) > 0){
-            $this->data['main_menus'] = $this->general->bootstrap_menu($this->Menu->findActive());
+            $this->data['main_menus'] = $this->general->bootstrap_menu1($this->Menu->findActive());
         }
         $this->data['header'] = $this->load->view('themes/'.$this->config->item('ci_blog_theme').'/header',$this->data, TRUE);
         $this->data['right_sidebar'] = $this->load->view('themes/'.$this->config->item('ci_blog_theme').'/right_sidebar',$this->data, TRUE);
@@ -67,9 +69,16 @@ class MY_Controller extends CI_Controller {
 
         $this->data['base_assets_url'] = BASE_URI.$this->base_assets_url;
 		$this->data['base_assets_url_web'] = BASE_URI.$this->base_assets_url_web;
+
+
         if($layout == true){
 			$this->data['header'] = $this->load->view(THEMES_DIR.'/'.$this->config->item('ci_blog_theme').'/header', $this->data, TRUE);
 			$this->data['slider'] = $this->load->view(THEMES_DIR.'/'.$this->config->item('ci_blog_theme').'/slider', $this->data, TRUE);
+
+			if (strpos($_SERVER['REQUEST_URI'], 'read') !== false) {
+				$this->data['slider'] = $this->load->view(THEMES_DIR.'/'.$this->config->item('ci_blog_theme').'/banner', $this->data, TRUE);
+				$this->data['end_path'] = $_SERVER['REQUEST_URI'];
+			}
             $this->data['content'] = (is_null($content)) ? '' : $this->load->view(THEMES_DIR.'/'.$this->config->item('ci_blog_theme').'/'.$content, $this->data, TRUE);
             $this->load->view(THEMES_DIR . '/' . $this->config->item('ci_blog_theme') . '/layout', $this->data);
         }else{

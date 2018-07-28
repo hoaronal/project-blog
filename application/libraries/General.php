@@ -199,7 +199,50 @@ class General {
         }
         return $menu_html;
     }
-   
-}
 
+	function bootstrap_menu1($array,$parent_id = 0,$parents = array())
+	{
+		if($parent_id==0)
+		{
+			foreach ($array as $element) {
+				if (($element['parent_id'] != 0) && !in_array($element['parent_id'],$parents)) {
+					$parents[] = $element['parent_id'];
+				}
+			}
+		}
+		$menu_html = '';
+		foreach($array as $element)
+		{
+			if($element['parent_id']==$parent_id)
+			{
+				$menu_html .= '<li>';
+				$menu_html .= '<a href="' . site_url($element['url']) . '">' . $element['name'] . '</a>';
+
+				if(in_array($element['id'],$parents))
+				{
+					$menu_html .= '<div class="small-drop">';
+					$menu_html .= '<div class="drop-holder">';
+					$menu_html .= '<ul class="list-unstyled">';
+					$menu_html .= $this->bootstrap_menu1($array, $element['id'], $parents);
+					$menu_html .= '</ul>';
+					$menu_html .= '</div>';
+					$menu_html .= '</div>';
+				}
+				$menu_html .= '</li>';
+			}
+		}
+		return $menu_html;
+	}
+}
+/*<li>
+	<a href="#">Services</a>
+	<div class="small-drop">
+		<div class="drop-holder">
+			<ul class="list-unstyled">
+				<li><a href="practice-area.html">Industries We Serve</a></li>
+				<li><a href="services.html">Services</a></li>
+			</ul>
+		</div>
+	</div>
+</li>*/
 ?>

@@ -24,7 +24,7 @@
 			<div class="col-xs-12 holder">
 				<!-- logo of the page -->
 
-				<div class="logo"><a href="index.html"><img src="<?php echo $base_assets_url_web;?>images/logo.png" class="logo-img" alt="LAW FIRM THEME FOR Law"></a></div>
+				<div class="logo"><a href="<?php echo site_url('/')?>"><img src="<?php echo $base_assets_url_web;?>images/logo.png" class="logo-img" alt="LAW FIRM THEME FOR Law"></a></div>
 				<a href="#" class="nav-opener visible-xs"><i class="fa fa-bars"></i></a>
 				<div class="nav-holder">
 					<!-- <a href="#" class="btn-search"><i class="fa fa-search"></i></a>
@@ -37,35 +37,7 @@
 					<!-- nav of the page -->
 					<nav id="nav">
 						<ul class="list-inline">
-							<li class="active"><a href="index.html">Home</a></li>
-							<li>
-								<a href="aboutus.html">About</a>
-								<div class="small-drop">
-									<div class="drop-holder">
-										<ul class="list-unstyled">
-											<li><a href="aboutus.html">About Us</a></li>
-											<li><a href="team-details.html">CEO</a></li>
-											<li><a href="team.html">Associates</a></li>
-											<li><a href="team-details-2.html">Advisors</a></li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li>
-								<a href="#">Services</a>
-								<div class="small-drop">
-									<div class="drop-holder">
-										<ul class="list-unstyled">
-											<li><a href="practice-area.html">Industries We Serve</a></li>
-											<li><a href="services.html">Services</a></li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li><a href="news.html">News</a></li>
-							<li><a href="blog.html">Blogs</a></li>
-							<li><a href="gallery.html">Gallery</a></li>
-							<li><a href="contactus.html">Contact</a></li>
+							<?php echo $main_menus;?>
 						</ul>
 					</nav>
 				</div>
