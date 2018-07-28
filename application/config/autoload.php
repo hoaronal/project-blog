@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('database','session','form_validation','pagination');
+$autoload['libraries'] = array('database','session','email','form_validation');
 
 /*
 | -------------------------------------------------------------------
@@ -72,12 +72,6 @@ $autoload['libraries'] = array('database','session','form_validation','paginatio
 | Prototype:
 |
 |	$autoload['drivers'] = array('cache');
-|
-| You can also supply an alternative property name to be assigned in
-| the controller:
-|
-|	$autoload['drivers'] = array('cache' => 'cch');
-|
 */
 $autoload['drivers'] = array();
 
@@ -89,7 +83,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('url','file','form','common_helper');
+$autoload['helper'] = array('url','file','form','text','date','general','security');
 
 /*
 | -------------------------------------------------------------------
@@ -103,7 +97,7 @@ $autoload['helper'] = array('url','file','form','common_helper');
 | config files.  Otherwise, leave it blank.
 |
 */
-$autoload['config'] = array();
+$autoload['config'] = array('ci-blog');
 
 /*
 | -------------------------------------------------------------------
@@ -117,7 +111,7 @@ $autoload['config'] = array();
 | "codeigniter_lang.php" would be referenced as array('codeigniter');
 |
 */
-$autoload['language'] = array();
+$autoload['language'] =array('auth', 'ion_auth');
 
 /*
 | -------------------------------------------------------------------
