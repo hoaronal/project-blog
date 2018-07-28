@@ -2,7 +2,7 @@
         <header class="header">
             <a href="<?php echo site_url('/');?>" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
-                Admin Manager
+                My Blog
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">

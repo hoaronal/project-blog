@@ -42,13 +42,12 @@
     <div class="footer">
         <button type="button" class="btn bg-olive btn-block" onclick="loginAction()">Sign me in</button>
         <p><a href="<?php echo site_url('forgot_password')?>">I forgot my password ?</a></p>
-        <!--<p><a href="<?php /*echo site_url('signup')*/?>" class="text-center">Create new account</a></p>-->
     </div>
     <?php echo form_close();?>
 </div>
 
 <!-- jQuery 2.0.2 -->
-<script src="http://ajax.googleapis.com/…/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!-- Bootstrap -->
 <script src="<?php echo $base_assets_url;?>js/bootstrap.min.js" type="text/javascript"></script>
 <script>
@@ -63,7 +62,7 @@
         }
     });
 
-    function checkCookie() {
+    /*function checkCookie() {
         var user = getCookie("username");
         if (user != "") {
             alert("Welcome again " + user);
@@ -73,7 +72,7 @@
                 setCookie("username", user, 365);
             }
         }
-    }
+    }*/
 
     function getCookie(cname) {
         var name = cname + "=";
@@ -101,9 +100,7 @@
     function deleteCookie(name) { setCookie(name, '', -1); }
 
     function loginAction() {
-        alert(document.getElementById('username')).value;
         var username = $('#username').val();
-        alert(username);
         var password = $('#password').val();
         var rememberMe = $('input[type=checkbox]').prop('checked');
         if(rememberMe.toString() == 'true'){

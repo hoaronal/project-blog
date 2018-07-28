@@ -12,6 +12,7 @@ class MY_Controller extends CI_Controller {
 	protected $current_groups = array();
 	protected $current_groups_ids = array();
 	protected $base_assets_url = '';
+	protected $base_assets_url_web = '';
     protected $parent_menu = '';
     protected $page_title = '';
     protected $theme = '';
@@ -62,8 +63,13 @@ class MY_Controller extends CI_Controller {
         
 
         $this->base_assets_url = 'assets/'.THEMES_DIR.'/'.$this->config->item('ci_blog_theme').'/';
+		$this->base_assets_url_web = 'assets/'.THEMES_DIR.'/'.'web/';
+
         $this->data['base_assets_url'] = BASE_URI.$this->base_assets_url;
+		$this->data['base_assets_url_web'] = BASE_URI.$this->base_assets_url_web;
         if($layout == true){
+			$this->data['header'] = $this->load->view(THEMES_DIR.'/'.$this->config->item('ci_blog_theme').'/header', $this->data, TRUE);
+			$this->data['slider'] = $this->load->view(THEMES_DIR.'/'.$this->config->item('ci_blog_theme').'/slider', $this->data, TRUE);
             $this->data['content'] = (is_null($content)) ? '' : $this->load->view(THEMES_DIR.'/'.$this->config->item('ci_blog_theme').'/'.$content, $this->data, TRUE);
             $this->load->view(THEMES_DIR . '/' . $this->config->item('ci_blog_theme') . '/layout', $this->data);
         }else{

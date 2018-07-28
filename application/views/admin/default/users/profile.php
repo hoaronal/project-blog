@@ -8,25 +8,32 @@
             <!-- form start -->
             <?php echo form_open('users/profile');?>
                 <input type="hidden" name="id" value="<?php echo $user['id']?>">
-                <div class="box-body">
+                <div class="box-body" style="padding-left: 30px">
                     <?php echo $this->session->flashdata('message');?>
                     <?php echo validation_errors(); ?>
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" readonly="readonly" name="username" class="form-control" id="username" placeholder="Username" value="<?php echo set_value('username', isset($user['username']) ? $user['username'] : '') ?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="username">Email</label>
-                        <input type="text" readonly="readonly" name="email" class="form-control" id="username" placeholder="Username" value="<?php echo set_value('email', isset($user['email']) ? $user['email'] : '') ?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="username">New Password</label>
-                        <input type="password" name="password" class="form-control" id="username" placeholder="New Password" value="">
-                    </div>
-                    <div class="form-group">
-                        <label for="username">Confirm Password</label>
-                        <input type="password" name="confirm_password" class="form-control" id="username" placeholder="Confirm Password" value="">
-                    </div>
+					<div class="" style="width: 70%; float: left;padding-right: 30px">
+						<div class="form-group">
+							<label for="username">Username</label>
+							<input type="text" readonly="readonly" name="username" class="form-control" id="username" placeholder="Username" value="<?php echo set_value('username', isset($user['username']) ? $user['username'] : '') ?>">
+						</div>
+						<div class="form-group">
+							<label for="username">Email</label>
+							<input type="text" readonly="readonly" name="email" class="form-control" id="username" placeholder="Username" value="<?php echo set_value('email', isset($user['email']) ? $user['email'] : '') ?>">
+						</div>
+						<div class="form-group">
+							<label for="username">New Password</label>
+							<input type="password" name="password" class="form-control" id="username" placeholder="New Password" value="">
+						</div>
+						<div class="form-group">
+							<label for="username">Confirm Password</label>
+							<input type="password" name="confirm_password" class="form-control" id="username" placeholder="Confirm Password" value="">
+						</div>
+					</div>
+					<div style="width: 30%; float: left;">
+						Upd
+					</div>
+					<div class="clearfix"></div>
+
                     <div class="form-group">
                         <label for="username">First  Name</label>
                         <input type="text" name="first_name" class="form-control" id="username" placeholder="First name" value="<?php echo set_value('first_name', isset($user['first_name']) ? $user['first_name'] : '') ?>">
@@ -46,7 +53,7 @@
                 </div><!-- /.box-body -->
 
                 <div class="box-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button> 
+                    <button type="submit" class="btn btn-primary">Submit</button>
                     <button type="button" class="btn btn-default" onclick="javascript:history.back()">Back</button>
                 </div>
             <?php echo form_close();?>

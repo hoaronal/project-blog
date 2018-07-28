@@ -16,7 +16,7 @@ Basic CMS based on CodeIgniter 3.x
 Sampel Accounts:
 
 admin => username : admin@admin.com password:password
-
+class="logo"
 members => username : members@website.com password:12345678
 
 

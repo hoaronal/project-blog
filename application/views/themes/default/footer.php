@@ -1,23 +1,25 @@
-<footer class="footer-wrap" id="footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="clearfix footer-inner">
-                <ul class="social-icons">
-                  <li><a data-tooltip="Facebook" data-delay="50"  data-toggle="tooltip" data-position="top" class="tooltips tooltipped facebook" href="#"><i class="fa fa-facebook"></i></a>
-                  </li>
-                  <li><a data-tooltip="Linkdin" data-delay="50" data-toggle="tooltip"  data-position="top" class="tooltips tooltipped linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-                  </li>
-                  <li><a data-tooltip="Twitter" data-delay="50" data-toggle="tooltip"  data-position="top" class="tooltips tooltipped twitter" href="#"><i class="fa fa-twitter"></i></a>
-                  </li>
-                  <li><a data-tooltip="Google Plus" data-delay="50" data-toggle="tooltip" data-position="top" class="tooltips tooltipped google-plus" href="#"><i class="fa fa-google-plus"></i></a>
-                  </li>
-                </ul>
-                <div class="copyright">
-                  <span>CI Blog &copy; All Rights Reserved | Theme by <a href="http://wowbootstrap.com">Wowbootstrap.com</a></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+<!-- footer of the Page -->
+<footer id="footer">
+	<div class="container holder">
+		<div class="row">
+			<div class="col-sm-5 col-xs-12 copyrights">
+				<p>
+					&copy; Law Adobe Global Ltd
+					| Developed by <a target="_blank" href="http://waaffsolutions.com/">WAAFF Solutions</a>
+				</p>
+			</div>
+			<div class="col-sm-7 col-xs-12 copyrights">
+				<ul class="footer-nav list-inline">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="aboutus.html">About Us</a></li>
+					<li><a href="practice-area.html">Industries We Serve</a></li>
+					<li><a href="services.html">Services</a></li>
+					<li><a href="news.html">News</a></li>
+					<li><a href="blog.html">Blogs</a></li>
+					<li><a href="gallery.html">Gallery</a></li>
+					<li><a href="contactus.html">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>

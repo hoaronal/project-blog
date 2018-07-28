@@ -36,7 +36,7 @@
 
 // The following values will probably need to be changed.
 $db['default']['username'] = "root";
-$db['default']['password'] = "";
+$db['default']['password'] = "Quanghoa1993";
 $db['default']['database'] = "ciblogdb";
 
 // The following values can probably stay the same.
