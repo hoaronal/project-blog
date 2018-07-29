@@ -1,10 +1,10 @@
 <?php
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Created by PhpStorm.
+ * User: quanghoa
+ * Date:12/01/2016
+ * Time: 10:40
  */
-
 class Setting extends CI_Model {
 
     var $table = 'settings';

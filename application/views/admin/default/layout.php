@@ -56,6 +56,11 @@
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
+		<style>
+			.align-center {
+				text-align: center;
+			}
+		</style>
     </head>
     <body class="skin-black">
         <?php echo $header;?>
@@ -75,7 +80,7 @@
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li class="active">Dashboard</li>
+                        <li class="active"><?php echo ucwords($end_path);?></li>
                     </ol>
                 </section>
 

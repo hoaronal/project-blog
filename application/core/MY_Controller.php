@@ -19,18 +19,16 @@ class MY_Controller extends CI_Controller {
 	protected $currentUrl = '';
     function __construct() {
         parent::__construct();
-
         // ======== Load Helper =========
         $this->load->helper(array('form','url','text','language','general'));
-
         // ======== Load Library ========
         $this->load->library(array('session','form_validation','pagination','ion_auth','general'));
-
         $this->load->config('ci-blog');
 
 
-
+		// ======== Load model ========
         $this->load->model('User');
+		$this->load->model('Setting');
         if($this->session->userdata('user_id')){
             $this->current_user = $this->User->find_by_id($this->session->userdata('user_id'));
             $this->current_groups = $this->current_groups();
@@ -55,7 +53,11 @@ class MY_Controller extends CI_Controller {
         $this->load->model('Menu');
         $this->data['main_menus'] = '';
 		$this->data['end_path'] = '';
-
+		$this->data['facebook_link'] = $this->Setting->findByKey('facebook_link');
+		$this->data['twitter_link'] = $this->Setting->findByKey('twitter_link');
+		$this->data['tumblr_link'] = $this->Setting->findByKey('tumblr_link');
+		$this->data['flickr_link'] = $this->Setting->findByKey('flickr_link');
+		$this->data['linkedin_link'] = $this->Setting->findByKey('linkedin_link');
         if(count($this->Menu->findActive()) > 0){
             $this->data['main_menus'] = $this->general->bootstrap_menu1($this->Menu->findActive());
         }
@@ -70,14 +72,16 @@ class MY_Controller extends CI_Controller {
         $this->data['base_assets_url'] = BASE_URI.$this->base_assets_url;
 		$this->data['base_assets_url_web'] = BASE_URI.$this->base_assets_url_web;
 
-
+		$endPath = explode("/",$_SERVER['REQUEST_URI']);
+		if(count($endPath) > 3){
+			$this->data['end_path'] = $endPath[3];
+		}
         if($layout == true){
 			$this->data['header'] = $this->load->view(THEMES_DIR.'/'.$this->config->item('ci_blog_theme').'/header', $this->data, TRUE);
 			$this->data['slider'] = $this->load->view(THEMES_DIR.'/'.$this->config->item('ci_blog_theme').'/slider', $this->data, TRUE);
 
 			if (strpos($_SERVER['REQUEST_URI'], 'read') !== false) {
 				$this->data['slider'] = $this->load->view(THEMES_DIR.'/'.$this->config->item('ci_blog_theme').'/banner', $this->data, TRUE);
-				$this->data['end_path'] = $_SERVER['REQUEST_URI'];
 			}
             $this->data['content'] = (is_null($content)) ? '' : $this->load->view(THEMES_DIR.'/'.$this->config->item('ci_blog_theme').'/'.$content, $this->data, TRUE);
             $this->load->view(THEMES_DIR . '/' . $this->config->item('ci_blog_theme') . '/layout', $this->data);
@@ -92,6 +96,12 @@ class MY_Controller extends CI_Controller {
 
     	$this->base_assets_url = 'assets/admin/'.$this->config->item('ci_blog_admin_theme').'/';
     	$this->data['base_assets_url'] = BASE_URI.$this->base_assets_url;
+		$endPath = explode("/",$_SERVER['REQUEST_URI']);
+		if(count($endPath) > 3){
+			$this->data['end_path'] = $endPath[3];
+		}
+		//====== Load site title
+		$this->data['site_title'] = $this->Setting->findByKey('site_title');
 
         //Category status options
         $this->data['category_status'] = array(

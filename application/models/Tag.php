@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: quanghoa
+ * Date:12/01/2016
+ * Time: 11:30
+ */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Tag extends CI_Model{

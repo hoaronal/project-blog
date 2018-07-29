@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: quanghoa
+ * Date: 29/07/2018
+ * Time: 21:29
+ */
 defined('BASEPATH') OR exit('No direct scriu access allowed');
 
 class Group extends CI_Model{

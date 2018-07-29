@@ -3,22 +3,20 @@
 		 <!-- general form elements -->
         <div class="box box-primary">
             <div class="box-header">
-                <h3 class="box-title">New Category</h3>
+                <h3 class="box-title">New Asset</h3>
             </div><!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="<?php echo site_url('admin/categories/add')?>" method="post">
+            <form role="form" action="<?php echo site_url('admin/assets/add')?>" method="post">
                 <div class="box-body">
                     <?php echo message_box(validation_errors(),'danger'); ?>
-                    <div class="form-group">
-                        <label for="category_name">Category Name</label>
+                    <!--<div class="form-group">
+                        <label for="category_name">Group Name</label>
                         <input type="text" name="name" class="form-control" id="category_name" placeholder="Name">
                     </div>
                     <div class="form-group">
-                        <label for="category_status">Status</label>
-                        <?php
-                            echo form_dropdown('status',$category_status,null,array('class' => 'form-control'));
-                        ?>
-                    </div>
+                        <label for="category_name">Description</label>
+                        <input type="text" name="description" class="form-control" id="category_name" placeholder="Description">
+                    </div>-->
                 </div><!-- /.box-body -->
 
                 <div class="box-footer">

@@ -21,8 +21,10 @@
                 </div><!-- /.box-body -->
 				<div class="clearfix"></div>
                 <div class="box-footer" style="margin-bottom: 50px">
-                    <button type="submit" class="btn btn-primary">Submit</button> 
-                    <button type="button" class="btn btn-default" onclick="javascript:history.back()">Back</button>
+					<div class="align-center">
+						<button type="submit" class="btn btn-primary ">Submit</button>
+						<button type="button" class="btn btn-default " onclick="javascript:history.back()">Back</button>
+					</div>
                 </div>
             </form>
         </div><!-- /.box -->

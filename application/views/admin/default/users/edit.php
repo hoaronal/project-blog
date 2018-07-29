@@ -58,9 +58,12 @@
                 </div><!-- /.box-body -->
 
                 <div class="box-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button> 
-                    <button type="button" class="btn btn-default" onclick="javascript:history.back()">Back</button>
+					<div class="align-center">
+						<button type="submit" class="btn btn-primary button">Submit</button>
+						<button type="button" class="btn btn-default button" onclick="javascript:history.back()">Back</button>
+					</div>
                 </div>
+
             </form>
         </div><!-- /.box -->
 	</div>

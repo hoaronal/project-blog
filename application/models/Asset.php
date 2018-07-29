@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: quanghoa
+ * Date: 29/07/2018
+ * Time: 21:29
+ */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Asset extends CI_Model{
@@ -7,7 +13,7 @@ class Asset extends CI_Model{
 
 
 	function find($limit = null, $offset = 0){
-		$assets = $this->db->order_by('name','asc')->get($this->table, $limit, $offset)->result_array();
+		$assets = $this->db->order_by('id','asc')->get($this->table, $limit, $offset)->result_array();
 		return $assets;
 	}
 

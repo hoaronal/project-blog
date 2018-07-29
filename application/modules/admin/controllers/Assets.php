@@ -100,33 +100,31 @@ class Assets extends MY_Controller {
 	}
 
 	public function index(){
-		
-		$config['base_url'] = site_url('admin/categories/index/');
-		$config['total_rows'] = count($this->Category->find());
-		$config['per_page'] = 10;
+		$config['base_url'] = site_url('admin/assets/index/');
+		$config['total_rows'] = count($this->Asset->find());
+		$config['per_page'] = 15;
 		$config["uri_segment"] = 4;
 		
-		$this->data['categories'] = $this->Category->find($config['per_page'], $this->uri->segment(4));
+		$this->data['assets'] = $this->Asset->find(15, $this->uri->segment(4));
 
 		$this->data['pagination'] = $this->bootstrap_pagination($config);
-		$this->render('admin/categories/index');
+		$this->load_admin('assets/index');
 	}
 
 	public function add(){
-		$this->form_validation->set_rules('name', 'name', 'required|is_unique[categories.name]');
+		$this->form_validation->set_rules('name', 'name', 'required|is_unique[assets.name]');
 		$this->form_validation->set_rules('status', 'status', 'required');
 
 		if($this->form_validation->run() == true){
-			$category = array(
+			$Asset = array(
 				'name' => $this->input->post('name'),
 				'status' => $this->input->post('status')
 			);
-			$this->Category->create($category);
-			$this->session->set_flashdata('message',message_box('Category has been saved','success'));
-			redirect('admin/categories/index');
+			$this->Asset->create($Asset);
+			$this->session->set_flashdata('message',message_box('Asset has been saved','success'));
+			redirect('admin/assets/index');
 		}
-
-		$this->render('admin/categories/add');
+		$this->load_admin('assets/add');
 	}
 
 	public function edit($id = null){
@@ -138,28 +136,28 @@ class Assets extends MY_Controller {
 		$this->form_validation->set_rules('status', 'status', 'required');
 
 		if($this->form_validation->run() == true){
-			$category = array(
+			$Asset = array(
 				'name' => $this->input->post('name'),
 				'status' => $this->input->post('status')
 			);
-			$this->Category->update($category, $id);
-			$this->session->set_flashdata('message',message_box('Category has been saved','success'));
-			redirect('admin/categories/index');
+			$this->Asset->update($Asset, $id);
+			$this->session->set_flashdata('message',message_box('Asset has been saved','success'));
+			redirect('admin/assets/index');
 		}
 
-		$this->data['category'] = $this->Category->find_by_id($id);
+		$this->data['Asset'] = $this->Asset->find_by_id($id);
 
-		$this->render('admin/categories/edit');
+		$this->render('admin/assets/edit');
 	}
 
 	public function delete($id = null){
 		if(!empty($id)){
-			$this->Category->delete($id);
-			$this->session->set_flashdata('message',message_box('Category has been deleted','success'));
-			redirect('admin/categories/index');
+			$this->Asset->delete($id);
+			$this->session->set_flashdata('message',message_box('Asset has been deleted','success'));
+			redirect('admin/assets/index');
 		}else{
 			$this->session->set_flashdata('message',message_box('Invalid id','danger'));
-			redirect('admin/categories/index');
+			redirect('admin/assets/index');
 		}
 	}
 }

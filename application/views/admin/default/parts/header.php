@@ -1,8 +1,8 @@
 <!-- header logo: style can be found in header.less -->
         <header class="header">
-            <a href="<?php echo site_url('/');?>" class="logo">
+            <a target="_blank" href="<?php echo site_url('/');?>" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
-                My Blog
+				<?php echo $site_title;?>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">

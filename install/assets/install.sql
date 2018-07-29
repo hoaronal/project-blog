@@ -464,7 +464,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'127.0.0.1','administrator','$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36','','hoa9x3@gmail.com','',NULL,NULL,'RZCIXpOj6MSvIFp1L9jgLe',1268889823,1532763517,1,'Admin','istrator','ADMIN','0'),(9,'127.0.0.1','members','$2y$08$0TTfatwN6dXgJzX6RpYBzeRIrVsTEUs8ao7ldGewEyCywq4VoMXC.',NULL,'members@website.com','6d73486c9d4f501a24c7d9c9bfa3b47d68c471c0',NULL,NULL,NULL,1451071829,1451071890,1,'My','Member','','');
+INSERT INTO `users` VALUES (1,'127.0.0.1','administrator','$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36','','admin@admin.com','',NULL,NULL,'RZCIXpOj6MSvIFp1L9jgLe',1268889823,1532763517,1,'Admin','istrator','ADMIN','0'),(9,'127.0.0.1','members','$2y$08$0TTfatwN6dXgJzX6RpYBzeRIrVsTEUs8ao7ldGewEyCywq4VoMXC.',NULL,'members@website.com','6d73486c9d4f501a24c7d9c9bfa3b47d68c471c0',NULL,NULL,NULL,1451071829,1451071890,1,'My','Member','','');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
