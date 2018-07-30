@@ -64,17 +64,17 @@ class MY_Controller extends CI_Controller {
         $this->data['header'] = $this->load->view('themes/'.$this->config->item('ci_blog_theme').'/header',$this->data, TRUE);
         $this->data['right_sidebar'] = $this->load->view('themes/'.$this->config->item('ci_blog_theme').'/right_sidebar',$this->data, TRUE);
         $this->data['footer'] = $this->load->view('themes/'.$this->config->item('ci_blog_theme').'/footer',$this->data, TRUE);
-        
-
         $this->base_assets_url = 'assets/'.THEMES_DIR.'/'.$this->config->item('ci_blog_theme').'/';
 		$this->base_assets_url_web = 'assets/'.THEMES_DIR.'/'.'web/';
-
         $this->data['base_assets_url'] = BASE_URI.$this->base_assets_url;
 		$this->data['base_assets_url_web'] = BASE_URI.$this->base_assets_url_web;
-
+		$this->data['service_check'] = '';
 		$endPath = explode("/",$_SERVER['REQUEST_URI']);
 		if(count($endPath) > 3){
 			$this->data['end_path'] = $endPath[3];
+			if($endPath[3] === 'services'){
+				$this->data['service_check'] = 'services';
+			}
 		}
         if($layout == true){
 			$this->data['header'] = $this->load->view(THEMES_DIR.'/'.$this->config->item('ci_blog_theme').'/header', $this->data, TRUE);
@@ -189,7 +189,6 @@ class MY_Controller extends CI_Controller {
 	protected function generate_acl_db(){
 
 
-		$controllers = array();
 	    $this->load->helper('file');
 
 	    // Scan files in the /application/controllers directory

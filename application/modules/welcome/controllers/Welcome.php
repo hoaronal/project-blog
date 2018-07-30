@@ -22,13 +22,15 @@ class Welcome extends MY_Controller {
 		parent::__construct();
 		$this->load->model('Post');
 		$this->load->model('Service');
+		$this->load->model('Industry');
 	}
 
 	public function index()
 	{
 		$this->data['home_page'] = 1;
-		$this->data['posts'] = $this->Post->find_active(3);
-		$this->data['services'] = $this->Service->findAll(3);
+		$this->data['posts'] = $this->Post->find(5,0,null,null);
+		$this->data['services'] = $this->Service->find(4,0);
+		$this->data['industries'] = $this->Industry->find(3,0);
 		$this->load_theme('home');
 	}
 }

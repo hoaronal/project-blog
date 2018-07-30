@@ -31,9 +31,54 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	  <?php echo $header;?>
 	  <?php echo $slider;?>
 	  <main id="main">
-		  <section class="container container-block">
+		  <section class="container container-block practice practice2 about news-posts news-block services team">
 	  		<?php echo $content;?>
 		  </section>
+		  <?php if($service_check === 'services'){?>
+		  <section class="container container-block consult">
+			  <div class="row">
+				  <div class="col-xs-12">
+					  <header class="main-heading consult">
+						  <h2>Consult Now</h2>
+					  </header>
+				  </div>
+			  </div>
+			  <div class="row">
+				  <div class="col-xs-12">
+					  <!-- consult-form of the page -->
+					  <form action="#" class="consult-form">
+						  <div class="form-row">
+							  <div class="form-group">
+								  <input type="text" class="form-control" placeholder="Full Name">
+							  </div>
+							  <div class="form-group">
+								  <input type="email" class="form-control" placeholder="Email Address">
+							  </div>
+						  </div>
+						  <div class="form-row">
+							  <div class="form-group">
+								  <input type="tel" class="form-control" placeholder="Phone Number">
+							  </div>
+							  <div class="form-group">
+								  <select  data-jcf='{"wrapNative": false}'>
+									  <option  selected>Enter Subject</option>
+									  <option>Subject 1</option>
+									  <option>Subject 2</option>
+									  <option>Subject 3</option>
+								  </select>
+							  </div>
+						  </div>
+						  <div class="form-row textarea">
+							  <div class="form-group">
+								  <textarea class="form-control" cols="30" rows="10" id="textarea" placeholder="Message"></textarea>
+							  </div>
+						  </div>
+						  <button type="submit" class="btn btn-default">Submit</button>
+					  </form>
+				  </div>
+			  </div>
+		  </section>
+		  <?php }?>
 	  </main>
 	  <?php echo $footer;?>
   </div>

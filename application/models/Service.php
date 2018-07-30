@@ -25,6 +25,15 @@ class Service extends CI_Model
         }
     }
 
+	function find($limit = null, $offset = 0){
+		$this->db->select('services.*');
+		$this->db->limit(4, $offset);
+		$this->db->order_by('id', 'asc');
+		$query = $this->db->get($this->table);
+
+		return $query->result_array();
+	}
+
     public function findById($id) {
         $this->db->select('*');
         $this->db->where('id', $id);
