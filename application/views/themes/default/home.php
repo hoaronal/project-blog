@@ -83,18 +83,25 @@
 										<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
 										<noscript><img src="<?php echo site_url('')?>/images/lawabode_news_img/n3.jpg"/> width="270" height="210" alt="image description" ></noscript>
 									</span>
-								<span class="date-box"><span class="month">October</span>14</span>
+
+								<?php
+								$date = $post['modified'];
+								$d = date_parse_from_format("Y-m-d", $date);
+								$monthNum  = $d["month"];
+								$dateObj   = DateTime::createFromFormat('!m', $monthNum);
+								$monthName = $dateObj->format('F');
+								?>
+								<span class="date-box"><span class="month"><?php echo $monthName; ?></span><?php echo $d["day"]; ?></span>
 							</a>
 						</div>
 						<div class="txt-box">
-							<span class="city">Dhaka, Bangladesh</span>
-							<h3><a href="news-details-3.html"><?php echo $post['title']; ?></a></h3>
+							<!--<span class="city">Dhaka, Bangladesh</span>-->
+							<h3><a href="<?php echo site_url('/')?>posts/read/<?php echo $post['slug']?>"><?php echo $post['title']; ?></a></h3>
 							<ul class="post-nav list-inline">
-								<li><a href="#"><i class="fa fa-user"></i> Admin</a></li>
+								<li><a href="#"><i class="fa fa-user"></i> <?php echo $post['username']; ?></a></li>
 								<li><a href="#"><i class="fa fa-tag"></i> News</a></li>
-								<!--<li><a href="#"><i class="fa fa-comment"></i>2 Comments</a></li>-->
 							</ul>
-							<p>CEO attended a conference in International Arbitration by ICC and ICC International Court of Arbitration (ICA) in Hotel Grand Hayatt Regency, New Delhi, India [...] </p>
+							<p><?php echo substr($post['body'],0,100); ?>...<a href="<?php echo site_url('/')?>posts/read/<?php echo $post['slug']?>">read more</a></p>
 						</div>
 					</div>
 				<?php endforeach; ?>

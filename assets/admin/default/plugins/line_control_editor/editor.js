@@ -258,7 +258,6 @@ You should have received a copy of the GNU General Public License along with thi
 							return xhr;
 						},
 						beforeSend:function() {
-								//insertImageModal.find("div.imageLink").slideUp(300);
 								imageProgressBar.css("width", "0").html("");
 						},
 						success:function(image){

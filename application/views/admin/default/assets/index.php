@@ -6,7 +6,7 @@
             </div><!-- /.box-header -->
             <div class="box-body">
             	<?php echo $this->session->flashdata('message');?>
-            	<p><a class="btn btn-default" href="<?php echo site_url('admin/assets/add')?>">New Asset</a></p>
+            	<!--<p><a class="btn btn-default" href="<?php /*echo site_url('admin/assets/add')*/?>">New Asset</a></p>-->
                 <table class="table table-bordered">
                     <tr>
                         <th style="width: 10px">#</th>

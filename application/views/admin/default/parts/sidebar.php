@@ -58,6 +58,11 @@
                                     <i class="fa fa-file" aria-hidden="true"></i> <span>Static Page</span>
                                 </a>
                             </li>
+							<li class="active">
+								<a href="<?php echo site_url('admin/assets')?>">
+									<i class="fa fa-cloud-upload" aria-hidden="true"></i> <span>Assets</span>
+								</a>
+							</li>
                             <li class="active">
                                 <a href="<?php echo site_url('admin/menus')?>">
                                     <i class="fa fa-tasks" aria-hidden="true"></i> <span>Menus</span>
