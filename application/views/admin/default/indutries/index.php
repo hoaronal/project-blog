@@ -6,27 +6,23 @@
             </div><!-- /.box-header -->
             <div class="box-body">
                 <?php echo $this->session->flashdata('message');?>
-                <p><a class="btn btn-default" href="<?php echo site_url('admin/services/add')?>">New Services</a></p>
+                <p><a class="btn btn-default" href="<?php echo site_url('admin/indutries/add')?>">New Services</a></p>
                 <table class="table table-bordered">
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
-                        <th>Content</th>
                         <th>Featured image</th>
-						<th>Status</th>
 						<th style="width: 100px">Action</th>
                     </tr>
-                    <?php if ($services): ?>
-                        <?php foreach ($services as $service): ?>
+                    <?php if ($industries): ?>
+                        <?php foreach ($industries as $industry): ?>
                             <tr>
-                                <td><?php echo $service['id']; ?></td>
-                                <td><?php echo $service['name']; ?></td>
-                                <td><?php echo $service['content']; ?></td>
-								<td><?php echo $service['featured_image']; ?></td>
-                                <td><?php echo $status[$service['status']]; ?></td>
+                                <td><?php echo $industry['id']; ?></td>
+                                <td><?php echo $industry['name']; ?></td>
+								<td><?php echo $industry['featured_image']; ?></td>
                                 <td class="actions">
-                                    <a href="<?php echo site_url('admin/services/edit/'.$service['id'])?>"><span class="badge bg-green">edit</span></a>
-                                    <a href="<?php echo site_url('admin/services/delete/'.$service['id'])?>" onclick="return confirm('Are you sure?')"><span class="badge bg-red">delete</span></a>
+                                    <a href="<?php echo site_url('admin/indutries/edit/'.$industry['id'])?>"><span class="badge bg-green">edit</span></a>
+                                    <a href="<?php echo site_url('admin/indutries/delete/'.$industry['id'])?>" onclick="return confirm('Are you sure?')"><span class="badge bg-red">delete</span></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

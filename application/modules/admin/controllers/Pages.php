@@ -29,7 +29,7 @@ class Pages extends MY_Controller {
             $q = $this->input->get('q');
             $this->data['pages'] = $this->Page->find($config['per_page'], $this->uri->segment(4),$user_id, $q);
             if (empty($this->data['pages'])) {
-                $this->session->set_flashdata('message', message_box('Data tidak ditemukan','danger'));
+                $this->session->set_flashdata('message', message_box('Data not found!','danger'));
                 redirect('admin/pages/index');
             }
             $config['total_rows'] = count($this->data['pages']);

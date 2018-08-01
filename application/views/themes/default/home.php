@@ -75,13 +75,13 @@
 						<div class="alignleft">
 							<a href="news-details-3.html">
 									<span data-picture data-alt="image description">
-										<span data-src="images/lawabode_news_img/n3.jpg" data-width="270" data-height="210"></span>
-										<span data-src="images/lawabode_news_img/n3.jpg" data-width="270" data-height="210" data-media="(-webkit-min-device-pixel-ratio:1.5), (min-resolution:1.5dppx)" ></span> <!-- retina 2x desktop -->
+										<span data-src="<?php echo site_url('')?><?php echo $post['featured_image']?>" data-width="270" data-height="210"></span>
+										<span data-src="<?php echo site_url('')?><?php echo $post['featured_image']?>" data-width="270" data-height="210" data-media="(-webkit-min-device-pixel-ratio:1.5), (min-resolution:1.5dppx)" ></span> <!-- retina 2x desktop -->
 										<!--[if (lt IE 9) & (!IEMobile)]>
 										<span data-src=""images/lawabode_news_img/n7.jpg""></span>
 										<![endif]-->
 										<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
-										<noscript><img src="<?php echo site_url('')?>/images/lawabode_news_img/n3.jpg"/> width="270" height="210" alt="image description" ></noscript>
+										<noscript><img src="<?php echo site_url('')?><?php echo $post['featured_image']?>" width="270" height="210" alt="image description" ></noscript>
 									</span>
 
 								<?php

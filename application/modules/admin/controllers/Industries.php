@@ -6,21 +6,19 @@
  * Time: 21:21
  */
 
-class Services extends MY_Controller
+class Industries extends MY_Controller
 {
     function __construct() {
         parent::__construct();
         /*$this->allow_group_access(array('admin'));*/
         $this->allow_group_access(array('admin','members'));
-        $this->load->model('Service');
+        $this->load->model('Industry');
 
     }
 
     function index() {
-        $this->data['services'] = $this->Service->findAll();
-        $this->data['status'] = $this->Service->status;
-        /*$this->data['serviceList'] = $this->Service->findList();*/
-        $this->load_admin('services/index');
+        $this->data['industries'] = $this->Industry->findAll();
+        $this->load_admin('indutries/index');
     }
 
     function add() {

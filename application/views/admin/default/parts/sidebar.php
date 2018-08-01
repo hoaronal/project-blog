@@ -78,6 +78,11 @@
                                     <i class="fa fa-user" aria-hidden="true"></i> <span>Customer</span>
                                 </a>
                             </li>
+							<li class="active">
+								<a href="<?php echo site_url('admin/industries')?>">
+									<i class="fa fa-user" aria-hidden="true"></i> <span>Industries</span>
+								</a>
+							</li>
                             <li class="active">
                                 <a href="<?php echo site_url('admin/settings')?>">
                                     <i class="fa fa-gear" aria-hidden="true"></i> <span>General Setting</span>

@@ -2,30 +2,22 @@
 Basic CMS based on CodeIgniter 3.x
 # Installation
 
-1. Copy 'ci-blog' directory to your 'www' or 'htdocs' directory
+1. Copy 'lawabode' directory to your 'www' or 'htdocs' directory
 
-2. Open your browser and type => http://localhost/ci-blog/install
+2. Open your browser and type => http://localhost/lawabode/install
 
-3. Fill the installation form (database server configuration) : host, username, password, database name
+3. Fill the installation form : host, username, password, database name
 
 4. Press the "Install" button
 
-5. Done, visit your url http://localhost/ci-blog/ (Note: Remove the install folder /install)
+5. Done, visit your url http://localhost/lawabode/ (Note: Remove the install folder /install)
+
+6. If exits error, please f5 to refresh page again.
 
 
-Sampel Accounts:
+Account login to admindatabrod:
 
-admin => username : admin@admin.com password:password
-class="logo"
+admin => username : hoa9x3@gmail.com password:password
+
 members => username : members@website.com password:12345678
 
-
-# Credits:
-
-http://codeigniter.com
-
-http://getbootstrap.com
-
-http://wowbootstrap.com
-
-https://github.com/mikecrittenden/codeigniter-installer

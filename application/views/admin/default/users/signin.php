@@ -36,7 +36,7 @@
         </div>
         <div class="form-group">
             <input type="checkbox" name="rememberMe" id="rememberMe"/> <label for="rememberMe">Remember me</label>
-            <input type="checkbox" name="remember" value="1" checked="checked" style="display: none" /> <!--Remember me-->
+            <input type="checkbox" name="remember" value="1" checked="checked" style="display: none" />
         </div>
     </div>
     <div class="footer">

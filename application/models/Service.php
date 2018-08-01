@@ -54,4 +54,9 @@ class Service extends CI_Model
         $this->db->where('id', $id);
         $this->db->update($this->table, $data);
     }
+
+	function delete($id){
+		$this->db->where('id',$id);
+		$this->db->delete($this->table);
+	}
 }
