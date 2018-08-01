@@ -31,9 +31,16 @@ class Posts extends My_Controller {
 	public function read($slug){
 		$this->data['page_layout'] = 'single'; 
 		$this->data['post'] = $this->Post->find_by_slug($slug);
-		$this->data['header'] = $this->load->view('themes/'.$this->theme.'/posts/header',$this->data, TRUE);
 		$this->data['page_title'] = $this->data['post']['title'];
 		$this->load_theme('posts/read');
+	}
+
+	public function detail($id){
+		$this->data['page_layout'] = 'single';
+		$this->data['post'] = $this->Post->find_by_id($id);
+		$this->data['header'] = $this->load->view('themes/'.$this->theme.'/posts/header',$this->data, TRUE);
+		$this->data['page_title'] = $this->data['post']['title'];
+		$this->load_theme('posts/detail');
 	}
 
 	public function category($slug = null){
